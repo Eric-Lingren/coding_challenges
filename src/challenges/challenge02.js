@@ -3,19 +3,18 @@ import './challengeStyles.css';
 import "./prism.css";
 import Prism from 'prismjs'
 
-class Challenge01 extends Component {
+class Challenge02 extends Component {
     constructor(){
         super()
         this.state = {
             examplesString : `
-                                addition(3, 2) ➞ 5
-                                addition(-3, -6) ➞ -9
-                                addition(7, 3) ➞ 10
+                                increment(0) ➞ 1
+                                increment(9) ➞ 10
                             `,
             codeString :    `
-                                addition(a, b) => a + b
+                                increment(num) => num++
                             `,
-            tests : [ {a: 3, b: 2}, {a: -3, b: -6}, {a: 7, b: 3} ],
+            tests : [ 0, 9 ],
             testResults : ''
         }
     }
@@ -24,7 +23,8 @@ class Challenge01 extends Component {
         let results = ''
 
         tests.forEach(function(test, i) {
-            let answer = test.a + test.b
+            test++
+            let answer = test
 
             results += ` 
                         ${answer} `
@@ -38,12 +38,12 @@ class Challenge01 extends Component {
         return (
             <div className="challenge-container">
                 <div className='challenge-title-contatiner'>
-                    <h2 className='challenge-main-title'> Challenge 1 - Simple Sum </h2>
+                    <h2 className='challenge-main-title'> Challenge 2 - Return the Next Number from the Integer Passed </h2>
                 </div>
                 <div className='challenge-instructions-container'>
                     <h3 className='challenge-instructions-title'> Instructions: </h3>
                     <p className='challenge-instructions-text'>
-                        Create a function that takes two numbers as arguments and return their sum.
+                        Create a function that takes a number as an argument, increments the number by +1 and returns the result.
                     </p>
                 </div>
 
@@ -80,6 +80,23 @@ class Challenge01 extends Component {
     }
 }
 
-export default Challenge01
+export default Challenge02
 
+
+///////////////////////////////////////////////////////////////
+//      Return the Next Number from the Integer Passed       //
+///////////////////////////////////////////////////////////////
+
+// Create a function that takes a number as an argument, increments the number by +1 and returns the result.
+
+// Examples:
+// addition(0) ➞ 1
+// addition(9) ➞ 10
+
+// function addition(num){
+//     num++
+//     console.log(num)
+// }
+
+// addition(0)
 

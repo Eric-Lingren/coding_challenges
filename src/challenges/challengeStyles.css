@@ -2,7 +2,8 @@
     border: 1px solid black;
     border-radius: .5em;
     padding: 20px;
-    background-color: #fffffc
+    background-color: #fffffc;
+    margin: 50px 30px 100px 30px;
 }
 .challenge-title-contatiner{
     display: flex;
