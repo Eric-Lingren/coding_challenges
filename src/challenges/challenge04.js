@@ -46,8 +46,9 @@ class Challenge04 extends Component {
         }
         console.log(result)
         results += ` 
-                        ${result} 
-                        Arrays dont print on screen correctly.
+                        [ ${result} ] 
+
+                        Arrays don't print on screen correctly.
                         Check the console for properly formatted result...
                         `
 

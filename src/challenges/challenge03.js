@@ -48,7 +48,8 @@ class Challenge03 extends Component {
         console.log(finalArr)
         results += ` 
                         ${finalArr} 
-                        Result of nested arrays doesnt print on screen correctly.
+
+                        Arrays don't print on screen correctly.
                         Check the console for properly formatted result...`
 
         this.setState({testResults : results})
