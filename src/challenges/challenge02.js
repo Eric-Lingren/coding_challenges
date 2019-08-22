@@ -38,7 +38,7 @@ class Challenge02 extends Component {
         return (
             <div className="challenge-container">
                 <div className='challenge-title-contatiner'>
-                    <h2 className='challenge-main-title'> Challenge 2 - Return the Next Number from the Integer Passed </h2>
+                    <h2 className='challenge-main-title'> Challenge 2 - Next Number </h2>
                 </div>
                 <div className='challenge-instructions-container'>
                     <h3 className='challenge-instructions-title'> Instructions: </h3>
