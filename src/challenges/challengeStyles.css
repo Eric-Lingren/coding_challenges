@@ -1,0 +1,26 @@
+.challenge-container{
+    border: 1px solid black;
+    border-radius: .5em;
+    padding: 20px;
+    background-color: #fffffc
+}
+.challenge-title-contatiner{
+    display: flex;
+    justify-content: center;
+}
+.challenge-main-title{
+    margin: 0;
+    padding: 0;
+    border-bottom: 5px solid black;
+    width: 60%;
+}
+.run-tests-button{
+    font-size: 1em;
+    border-radius: .3em;
+    background-color: #daedf4;
+    padding: 5px;
+}
+
+.pre-wrapper-test-results{
+    height: 150px;
+}

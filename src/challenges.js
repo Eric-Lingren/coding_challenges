@@ -13,7 +13,6 @@ function addition(a, b) {
 // addition(7,3)
 
 
-https://github.com/insideoutdevelopment/devguide.git
 
 ///////////////////////////////////////////////////////////////
 //      Return the Next Number from the Integer Passed       //
