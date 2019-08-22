@@ -265,11 +265,6 @@ function getChar(c){
 
 
 
-        console.log(result)
-
-
-
-
 
 //  REVENTGE OF THE PANCAKES
 
@@ -309,4 +304,4 @@ function pancakeFlipper(pancakes){
     console.log(`Flip Count was ${flipCount}`)
 }
 
-pancakeFlipper(test1)
+// pancakeFlipper(test1)
