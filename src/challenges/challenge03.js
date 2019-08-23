@@ -50,7 +50,7 @@ class Challenge03 extends Component {
                         ${finalArr} 
 
                         Arrays don't print on screen correctly.
-                        Check the console for properly formatted result...`
+                        Check the console for a properly formatted result...`
 
         this.setState({testResults : results})
     }

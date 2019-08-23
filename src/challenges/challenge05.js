@@ -4,26 +4,28 @@ import "./prism.css";
 import Prism from 'prismjs'
 
 
-class Challenge04 extends Component {
+class Challenge05 extends Component {
     constructor(){
         super()
         this.state = {
             examplesString : `
-                                [ "this", "is", "an", "array"] ➞ ["is", "an", "array"]
+                                (10,10) ➞ 100
+                                (7, 12) ➞ 84 
                             `,
             codeString :    `
-                                function combined(arr){
-                                    let max = 0;
-                                    let result = []
-                                    for(let i = 0; i < arr.length - 2; i++){
-                                        let currentLength = arr[i].length + arr[i + 1].length + arr[i + 2].length
-                                        let currentWords = [arr[i], arr[i + 1], arr[i + 2]]
-                                        if(currentLength > max){
-                                            result = currentWords
-                                            max = currentLength
-                                        }
+                                class Shape {
+                                    constructor(height, width) {
+                                        this.height = height;
+                                        this.width = width;
                                     }
-                                    return result
+                                    // Getter
+                                    get area() {
+                                        return this.calcArea();
+                                    }
+                                    // Method
+                                    calcArea() {
+                                    return this.height * this.width;
+                                    }
                                 }
                             `,
             tests : ["this", "is", "an", "array"],
@@ -60,12 +62,12 @@ class Challenge04 extends Component {
         return (
             <div className="challenge-container">
                 <div className='challenge-title-contatiner'>
-                    <h2 className='challenge-main-title'> Challenge 4 - Three Longest Words </h2>
+                    <h2 className='challenge-main-title'> Challenge 5 - Total Area  </h2>
                 </div>
                 <div className='challenge-instructions-container'>
                     <h3 className='challenge-instructions-title'> Instructions: </h3>
                     <p className='challenge-instructions-text'>
-                        Write a function that takes an array of words and returns the 3 longest adjacent words as the result
+                        Write a constructor function that creates a square or rectangle which can calculate its area
                     </p>
                 </div>
 
@@ -102,33 +104,36 @@ class Challenge04 extends Component {
     }
 }
 
-export default Challenge04
+export default Challenge05
 
 
 
 ///////////////////////////////////////////////////////////////
 //                                                           //
-//                     3 Longest Words                       //
+//                        Total Area                         //
 //                                                           //
 ///////////////////////////////////////////////////////////////
 
-//  Write a function that takes an array of words and returns the 3 longest adjacent words as the result
+//  Write a constructor function that creates a square or rectangle which can calculate its area
 
 //  Example:
-//  [ "this", "is", "an", "array"] should return ["is", "an", "array"]
+//  (10,10) should return 100
+//  (7, 12) should return 84
 
-// function combined(arr){
-//     let max = 0;
-//     let result = []
-//     for(let i = 0; i < arr.length - 2; i++){
-//         let currentLength = arr[i].length + arr[i + 1].length + arr[i + 2].length
-//         let currentWords = [arr[i], arr[i + 1], arr[i + 2]]
-//         if(currentLength > max){
-//             result = currentWords
-//             max = currentLength
-//         }
-//     }
-//     console.log(result)
-// }
+class Shape {
+    constructor(height, width) {
+        this.height = height;
+        this.width = width;
+    }
+    // Getter
+    get area() {
+        return this.calcArea();
+    }
+    // Method
+    calcArea() {
+      return this.height * this.width;
+    }
+}
 
-// combined(["this", "is", "an", "array"])
+// const square = new Shape(7, 12);
+// console.log(square.area);
