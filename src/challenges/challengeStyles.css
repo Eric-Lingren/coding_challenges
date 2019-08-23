@@ -25,3 +25,9 @@
 .pre-wrapper-test-results{
     height: 150px;
 }
+
+/* @media only screen and (max-width: 500px) {
+    .pre-wrapper {
+        margin-left: -200px;
+    }
+} */

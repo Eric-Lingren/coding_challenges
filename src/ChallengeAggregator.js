@@ -9,6 +9,7 @@ import Challenge06 from './challenges/challenge06'
 function ChallengeAggregator() {
     return (
         <div>
+            <h3> On mobile, you must scroll left within the black boxes to see the code.  This is part of the Prismjs package I am using to display inline code. </h3>
             <Challenge01 />
             <Challenge02 />
             <Challenge03 />
