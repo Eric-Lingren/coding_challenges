@@ -28,32 +28,19 @@ class Challenge05 extends Component {
                                     }
                                 }
                             `,
-            tests : ["this", "is", "an", "array"],
+            tests : [ {height: 10, width: 10}, {height: 7, width: 12} ],
             testResults : ''
         }
     }
 
-    runTests = (arr) => {
+    runTests = (tests) => {
         let results = ''
 
-        let max = 0;
-        let result = []
-        for(let i = 0; i < arr.length - 2; i++){
-            let currentLength = arr[i].length + arr[i + 1].length + arr[i + 2].length
-            let currentWords = [arr[i], arr[i + 1], arr[i + 2]]
-            if(currentLength > max){
-                result = currentWords
-                max = currentLength
-            }
-        }
-        console.log(result)
-        results += ` 
-                        [ ${result} ] 
-
-                        Arrays don't print on screen correctly.
-                        Check the console for a properly formatted result...
-                        `
-
+        tests.forEach(function(test, i) {
+            let answer = test.height * test.width
+            results += ` 
+                        ${answer} `
+        })
         this.setState({testResults : results})
     }
     
@@ -120,20 +107,20 @@ export default Challenge05
 //  (10,10) should return 100
 //  (7, 12) should return 84
 
-class Shape {
-    constructor(height, width) {
-        this.height = height;
-        this.width = width;
-    }
-    // Getter
-    get area() {
-        return this.calcArea();
-    }
-    // Method
-    calcArea() {
-      return this.height * this.width;
-    }
-}
+// class Shape {
+//     constructor(height, width) {
+//         this.height = height;
+//         this.width = width;
+//     }
+//     // Getter
+//     get area() {
+//         return this.calcArea();
+//     }
+//     // Method
+//     calcArea() {
+//       return this.height * this.width;
+//     }
+// }
 
 // const square = new Shape(7, 12);
 // console.log(square.area);
