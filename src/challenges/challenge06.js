@@ -4,31 +4,22 @@ import "./prism.css";
 // import Prism from 'prismjs'
 
 
-class Challenge05 extends Component {
+class Challenge06 extends Component {
     constructor(){
         super()
         this.state = {
             examplesString : `
-                                (10,10) ➞ 100
-                                (7, 12) ➞ 84 
+                                "ooxxxxx" ➞ false
+                                "oXxOox" ➞ true
                             `,
             codeString :    `
-                                class Shape {
-                                    constructor(height, width) {
-                                        this.height = height;
-                                        this.width = width;
-                                    }
-                                    // Getter
-                                    get area() {
-                                        return this.calcArea();
-                                    }
-                                    // Method
-                                    calcArea() {
-                                    return this.height * this.width;
-                                    }
+                                function XO(str) {
+                                    let x = str.toLowerCase().split('').filter(letter => letter === 'x').length
+                                    let o = str.toLowerCase().split('').filter(letter => letter === 'o').length
+                                    return x === o 
                                 }
                             `,
-            tests : [ {height: 10, width: 10}, {height: 7, width: 12} ],
+            tests : [ "ooxxxxx", "oXxOox" ],
             testResults : ''
         }
     }
@@ -37,7 +28,9 @@ class Challenge05 extends Component {
         let results = ''
 
         tests.forEach(function(test, i) {
-            let answer = test.height * test.width
+                let x = test.toLowerCase().split('').filter(letter => letter === 'x').length;
+                let o = test.toLowerCase().split('').filter(letter => letter === 'o').length;
+                let answer = x === o 
             results += ` 
                         ${answer} `
         })
@@ -50,13 +43,13 @@ class Challenge05 extends Component {
             <div className="challenge-container">
 
                 <div className='challenge-title-contatiner'>
-                    <h2 className='challenge-main-title'> Challenge 5 - Total Area  </h2>
+                    <h2 className='challenge-main-title'> Challenge 6 - X's & O's </h2>
                 </div>
 
                 <div className='challenge-instructions-container'>
                     <h3 className='challenge-instructions-title'> Instructions: </h3>
                     <p className='challenge-instructions-text'>
-                        Write a constructor function that creates a square or rectangle which can calculate its area
+                        Write a function that determines if a string has the same number of X's and O's
                     </p>
                 </div>
 
@@ -93,36 +86,26 @@ class Challenge05 extends Component {
     }
 }
 
-export default Challenge05
+export default Challenge06
 
 
 
 ///////////////////////////////////////////////////////////////
 //                                                           //
-//                        Total Area                         //
+//                        X's & O's                          //
 //                                                           //
 ///////////////////////////////////////////////////////////////
 
-//  Write a constructor function that creates a square or rectangle which can calculate its area
+//  Write a function that determines if a string has the same number of X's and O's
 
 //  Example:
-//  (10,10) should return 100
-//  (7, 12) should return 84
+//  "ooxxxxx" should return false
+//  "oXxOox" should return true
 
-// class Shape {
-//     constructor(height, width) {
-//         this.height = height;
-//         this.width = width;
-//     }
-//     // Getter
-//     get area() {
-//         return this.calcArea();
-//     }
-//     // Method
-//     calcArea() {
-//       return this.height * this.width;
-//     }
-// }
+function XO(str) {
+    let x = str.toLowerCase().split('').filter(x => x === 'x').length;
+    let o = str.toLowerCase().split('').filter(x => x === 'o').length;
+    console.log( x === o );
+}
 
-// const square = new Shape(7, 12);
-// console.log(square.area);
+// XO("oXxOox")
