@@ -5,6 +5,8 @@ import Challenge03 from './challenges/challenge03'
 import Challenge04 from './challenges/challenge04'
 import Challenge05 from './challenges/challenge05'
 import Challenge06 from './challenges/challenge06'
+import Challenge07 from './challenges/challenge07'
+import Challenge08 from './challenges/challenge08'
 
 function ChallengeAggregator() {
     return (
@@ -16,6 +18,8 @@ function ChallengeAggregator() {
             <Challenge04 />
             <Challenge05 />
             <Challenge06 />
+            <Challenge07 />
+            <Challenge08 />
         </div>
     )
 }
