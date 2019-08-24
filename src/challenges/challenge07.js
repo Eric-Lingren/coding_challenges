@@ -165,39 +165,39 @@ export default Challenge07
 // 531 ==> -1
 
 
-function nextBigger(n){
-    let numSplit = n.toString().split('')
-    let numbersArray = []
-    for(let i = 0; i < numSplit.length; i++){
-        let numStringtoNumber = parseInt(numSplit[i])
-        numbersArray.push(numStringtoNumber)
-    }
+// function nextBigger(n){
+//     let numSplit = n.toString().split('')
+//     let numbersArray = []
+//     for(let i = 0; i < numSplit.length; i++){
+//         let numStringtoNumber = parseInt(numSplit[i])
+//         numbersArray.push(numStringtoNumber)
+//     }
 
-    let originalNumberSorted = numbersArray.sort()
-    let maxNumberPossible = parseInt(originalNumberSorted.reverse().join(''))
+//     let originalNumberSorted = numbersArray.sort()
+//     let maxNumberPossible = parseInt(originalNumberSorted.reverse().join(''))
 
-    if(maxNumberPossible === n){
-        return -1
-    } 
+//     if(maxNumberPossible === n){
+//         return -1
+//     } 
     
-    let newNumber = 0
-    for(let i = n+1; i <= maxNumberPossible; i++){
-        newNumber = i
-        let newNumberArrayString = newNumber.toString().split('')
+//     let newNumber = 0
+//     for(let i = n+1; i <= maxNumberPossible; i++){
+//         newNumber = i
+//         let newNumberArrayString = newNumber.toString().split('')
 
-        let newNumbersArrayNumbers = []
-        newNumberArrayString.forEach(number => newNumbersArrayNumbers.push(parseInt(number)) )
+//         let newNumbersArrayNumbers = []
+//         newNumberArrayString.forEach(number => newNumbersArrayNumbers.push(parseInt(number)) )
 
-        let newNumberSortedArray = newNumbersArrayNumbers.sort().reverse()
+//         let newNumberSortedArray = newNumbersArrayNumbers.sort().reverse()
 
-        let string1 = originalNumberSorted.join('')
-        let string2 = newNumberSortedArray.join('')
+//         let string1 = originalNumberSorted.join('')
+//         let string2 = newNumberSortedArray.join('')
 
-        if(string1 === string2){
-            return newNumber
-        } 
-    }    
-}
+//         if(string1 === string2){
+//             return newNumber
+//         } 
+//     }    
+// }
 
 // console.log(nextBigger(12))
 // console.log(nextBigger(513))

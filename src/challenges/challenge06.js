@@ -1,7 +1,6 @@
 import React, { Component }  from 'react';
 import './challengeStyles.css';
 import "./prism.css";
-// import Prism from 'prismjs'
 
 
 class Challenge06 extends Component {
@@ -102,10 +101,10 @@ export default Challenge06
 //  "ooxxxxx" should return false
 //  "oXxOox" should return true
 
-function XO(str) {
-    let x = str.toLowerCase().split('').filter(x => x === 'x').length;
-    let o = str.toLowerCase().split('').filter(x => x === 'o').length;
-    console.log( x === o );
-}
+// function XO(str) {
+//     let x = str.toLowerCase().split('').filter(x => x === 'x').length;
+//     let o = str.toLowerCase().split('').filter(x => x === 'o').length;
+//     console.log( x === o );
+// }
 
 // XO("oXxOox")

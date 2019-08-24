@@ -1,4 +1,5 @@
 import React from 'react';
+import Prism from 'prismjs'
 import Challenge01 from './challenges/challenge01'
 import Challenge02 from './challenges/challenge02'
 import Challenge03 from './challenges/challenge03'
@@ -7,6 +8,7 @@ import Challenge05 from './challenges/challenge05'
 import Challenge06 from './challenges/challenge06'
 import Challenge07 from './challenges/challenge07'
 import Challenge08 from './challenges/challenge08'
+import Challenge09 from './challenges/challenge09'
 
 function ChallengeAggregator() {
     return (
@@ -20,6 +22,7 @@ function ChallengeAggregator() {
             <Challenge06 />
             <Challenge07 />
             <Challenge08 />
+            <Challenge09 />
         </div>
     )
 }

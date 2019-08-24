@@ -1,7 +1,6 @@
 import React, { Component }  from 'react';
 import './challengeStyles.css';
 import "./prism.css";
-import Prism from 'prismjs'
 
 
 class Challenge03 extends Component {

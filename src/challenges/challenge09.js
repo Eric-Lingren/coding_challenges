@@ -2,18 +2,21 @@ import React, { Component }  from 'react';
 import './challengeStyles.css';
 import "./prism.css";
 
-class Challenge02 extends Component {
+
+class Challenge09 extends Component {
     constructor(){
         super()
         this.state = {
             examplesString : `
-                                increment(0) ➞ 1
-                                increment(9) ➞ 10
+                                65 ➞  'A'
+                                77 ➞  'M'  
+                                43 ➞  '+'
+                                63 ➞  '?'
                             `,
             codeString :    `
-                                increment(num) => num++
+                                getChar(code) => String.fromCharCode(code)
                             `,
-            tests : [ 0, 9 ],
+            tests : [ 65, 77, 43, 63 ],
             testResults : ''
         }
     }
@@ -21,14 +24,12 @@ class Challenge02 extends Component {
     runTests = (tests) => {
         let results = ''
 
-        tests.forEach(function(test, i) {
-            test++
-            let answer = test
-
+        tests.forEach(function(str, i) {
+            let answer = String.fromCharCode(str)
+            
             results += ` 
                         ${answer} `
         })
-
         this.setState({testResults : results})
     }
     
@@ -36,13 +37,15 @@ class Challenge02 extends Component {
     render(){
         return (
             <div className="challenge-container">
+
                 <div className='challenge-title-contatiner'>
-                    <h2 className='challenge-main-title'> Challenge 2 - Next Number </h2>
+                    <h2 className='challenge-main-title'> Challenge 9 - ASCII Characters </h2>
                 </div>
+
                 <div className='challenge-instructions-container'>
                     <h3 className='challenge-instructions-title'> Instructions: </h3>
                     <p className='challenge-instructions-text'>
-                        Create a function that takes a number as an argument, increments the number by +1 and returns the result.
+                    /Write a function which takes a number and returns the corresponding ASCII char for that value.
                     </p>
                 </div>
 
@@ -79,23 +82,21 @@ class Challenge02 extends Component {
     }
 }
 
-export default Challenge02
+export default Challenge09
 
 
-///////////////////////////////////////////////////////////////
-//      Return the Next Number from the Integer Passed       //
-///////////////////////////////////////////////////////////////
 
-// Create a function that takes a number as an argument, increments the number by +1 and returns the result.
 
-// Examples:
-// addition(0) ➞ 1
-// addition(9) ➞ 10
+//Write a function which takes a number and returns the corresponding ASCII char for that value.
 
-// function addition(num){
-//     num++
-//     console.log(num)
+//Example:
+//get_char(65) # => 'A'
+
+// function getChar(c){
+//     return String.fromCharCode(c)
 // }
 
-// addition(0)
-
+// console.log(getChar(55))
+// console.log(getChar(62))
+// console.log(getChar(65))
+// console.log(getChar(58))
