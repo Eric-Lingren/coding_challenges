@@ -45,7 +45,7 @@ class Challenge09 extends Component {
                 <div className='challenge-instructions-container'>
                     <h3 className='challenge-instructions-title'> Instructions: </h3>
                     <p className='challenge-instructions-text'>
-                    /Write a function which takes a number and returns the corresponding ASCII char for that value.
+                        Write a function which takes a number and returns the corresponding ASCII char for that value.
                     </p>
                 </div>
 
