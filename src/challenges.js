@@ -304,3 +304,110 @@ function pancakeFlipper(pancakes){
 }
 
 // pancakeFlipper(test1)
+
+
+
+
+
+
+// 6. ZigZag Conversion
+// Medium
+
+// The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
+
+// P   A   H   N
+// A P L S I I G
+// Y   I   R
+// And then read line by line: "PAHNAPLSIIGYIR"
+
+// Write the code that will take a string and make this conversion given a number of rows:
+
+// string convert(string s, int numRows);
+// Example 1:
+
+// Input: s = "PAYPALISHIRING", numRows = 3
+// Output: "PAHNAPLSIIGYIR"
+
+// Example 2:
+
+// Input: s = "PAYPALISHIRING", numRows = 4
+// Output: "PINALSIGYAHRPI"
+// Explanation:
+
+// P     I    N
+// A   L S  I G
+// Y A   H R
+// P     I
+
+// 0 6 12
+// 3 9
+
+function zigZag(numRows){
+    const inputString = "PAYPALISHIRING"
+    
+    // P   A   H   N
+    // A P L S I I G
+    // Y   I   R
+    
+    // 0 4 8 12
+    // 2 6 10
+    
+    let whichRow = 0
+
+    let middleRows = numRows-2
+    let firstRowIncrement = numRows+middleRows
+    let lastRowIncrement = numRows-1
+
+    // console.log(middleRows);
+    // console.log(firstRowIncrement);
+    // console.log(lastRowIncrement);
+
+    let outputString = ''
+    let firstRowIndexes = []
+    let secondRowIncrement = firstRowIncrement+1
+
+    let firstRowString = ''
+    let secondRowString = ''
+    let thirdRowString = ''
+
+// console.log(firstRowIncrement);
+let rowCounter = 1
+let rowDirection = 'up'
+    for(let i = 0; i < inputString.length; i++){
+        // console.log(i);
+        //  if ^ is a whole number add first row increment to first row indexes
+        
+        // if(Number.isInteger(i/firstRowIncrement)) firstRowIndexes.push(i)
+        // console.log(i/secondRowIncrement);
+
+        if(i % firstRowIncrement === 0) outputString += inputString[i]
+        // if(i % lastRowIncrement === 0) outputString += inputString[i]
+        
+        console.log(rowCounter);
+        console.log(rowDirection);
+
+        if(rowCounter === 1){
+            firstRowString += inputString[i]
+        }
+
+
+        
+        if((rowCounter <= numRows) && (rowDirection === 'up') ) rowCounter += 1
+        if((rowCounter > 1 ) && (rowDirection === 'down') ) rowCounter -= 1
+        if(rowCounter === numRows) rowDirection = 'down' 
+        if(rowCounter === 1) rowDirection = 'up' 
+
+        
+        
+        
+    }
+    console.log(firstRowString);
+    // console.log(outputString) 
+    // console.log(firstRowIndexes);
+}
+
+
+
+zigZag(3)
+
+
