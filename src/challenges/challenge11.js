@@ -51,9 +51,9 @@ class Challenge11 extends Component {
                 }
             }
             
-        const resultString = resultArray.join(' ')
-        results += ` 
-                    ${resultString} `
+            const resultString = resultArray.join(' ')
+            results += ` 
+                ${resultString} `
         })        
         
         this.setState({testResults : results})
