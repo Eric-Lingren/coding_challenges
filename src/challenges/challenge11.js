@@ -10,7 +10,11 @@ class Challenge11 extends Component {
             examplesString : `
                     "The sunset sets at twelve o' clock." 
                     returns:
-                    "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" 
+                    "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"
+
+                    "The narwhal bacons at midnight."
+                    returns: 
+                    "20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20"
             `,
             codeString :    `
                     alphabetPosition = (string) => {
@@ -28,26 +32,31 @@ class Challenge11 extends Component {
                         return resultString
                     }
             `,
-            tests : "The sunset sets at twelve o' clock.",
+            tests : ["The sunset sets at twelve o' clock.", "The narwhal bacons at midnight."],
             testResults : ''
         }
     }
 
     runTests = (tests) => {
-        const alphabet = 'abcdefghijklmnopqrstuvwxyz'
-        let resultArray = []
+        let results = ''
+
+        tests.forEach(test => {
+            const alphabet = 'abcdefghijklmnopqrstuvwxyz'
+            let resultArray = []
             
-            for(let i = 0; i < tests.length; i++ ){
-                let currentLetter = tests.charAt(i).toLowerCase()
+            for(let i = 0; i < test.length; i++ ){
+                let currentLetter = test.charAt(i).toLowerCase()
                 if(alphabet.indexOf(currentLetter) > -1){
                     resultArray.push(alphabet.indexOf(currentLetter)+1)
                 }
             }
             
         const resultString = resultArray.join(' ')
+        results += ` 
+                    ${resultString} `
+        })        
         
-        
-        this.setState({testResults : resultString})
+        this.setState({testResults : results})
     }
     
 
@@ -128,7 +137,7 @@ export default Challenge11
 //     for(let i = 0; i < string.length; i++ ){
 //         let currentLetter = string.charAt(i).toLowerCase()
 //         if(alphabet.indexOf(currentLetter) > -1){
-//             resultArray.push(alphabet.indexOf(currentLetter))
+//             resultArray.push(alphabet.indexOf(currentLetter)+1)
 //         }
 //     }
 
