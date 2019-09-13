@@ -2,18 +2,23 @@ import React, { Component }  from 'react';
 import './challengeStyles.css';
 import "./prism.css";
 
-class Challenge02 extends Component {
+
+class Challenge06 extends Component {
     constructor(){
         super()
         this.state = {
             examplesString : `
-                                increment(0) ➞ 1
-                                increment(9) ➞ 10
+                                "ooxxxxx" ➞ false
+                                "oXxOox" ➞ true
                             `,
             codeString :    `
-                                increment(num) => num++
+                                function XO(str) {
+                                    let x = str.toLowerCase().split('').filter(letter => letter === 'x').length
+                                    let o = str.toLowerCase().split('').filter(letter => letter === 'o').length
+                                    return x === o 
+                                }
                             `,
-            tests : [ 0, 9 ],
+            tests : [ "ooxxxxx", "oXxOox" ],
             testResults : ''
         }
     }
@@ -22,13 +27,12 @@ class Challenge02 extends Component {
         let results = ''
 
         tests.forEach(function(test, i) {
-            test++
-            let answer = test
-
+                let x = test.toLowerCase().split('').filter(letter => letter === 'x').length;
+                let o = test.toLowerCase().split('').filter(letter => letter === 'o').length;
+                let answer = x === o 
             results += ` 
                         ${answer} `
         })
-
         this.setState({testResults : results})
     }
     
@@ -36,13 +40,15 @@ class Challenge02 extends Component {
     render(){
         return (
             <div className="challenge-container">
+
                 <div className='challenge-title-contatiner'>
-                    <h2 className='challenge-main-title'> Challenge 2 - Next Number </h2>
+                    <h2 className='challenge-main-title'> Challenge 6 - X's & O's </h2>
                 </div>
+
                 <div className='challenge-instructions-container'>
                     <h3 className='challenge-instructions-title'> Instructions: </h3>
                     <p className='challenge-instructions-text'>
-                        Create a function that takes a number as an argument, increments the number by +1 and returns the result.
+                        Write a function that determines if a string has the same number of X's and O's
                     </p>
                 </div>
 
@@ -79,23 +85,26 @@ class Challenge02 extends Component {
     }
 }
 
-export default Challenge02
+export default Challenge06
+
 
 
 ///////////////////////////////////////////////////////////////
-//      Return the Next Number from the Integer Passed       //
+//                                                           //
+//                        X's & O's                          //
+//                                                           //
 ///////////////////////////////////////////////////////////////
 
-// Create a function that takes a number as an argument, increments the number by +1 and returns the result.
+//  Write a function that determines if a string has the same number of X's and O's
 
-// Examples:
-// addition(0) ➞ 1
-// addition(9) ➞ 10
+//  Example:
+//  "ooxxxxx" should return false
+//  "oXxOox" should return true
 
-// function addition(num){
-//     num++
-//     console.log(num)
+// function XO(str) {
+//     let x = str.toLowerCase().split('').filter(x => x === 'x').length;
+//     let o = str.toLowerCase().split('').filter(x => x === 'o').length;
+//     console.log( x === o );
 // }
 
-// addition(0)
-
+// XO("oXxOox")

@@ -312,6 +312,12 @@ function pancakeFlipper(pancakes){
 
 
 
+///////////////////////////////////////////////////////////////
+//                                                           //
+//              Replace With Alphabet Position               //
+//                                                           //
+///////////////////////////////////////////////////////////////
+
 
 // Given a string, replace every letter with its position in the alphabet.
 
@@ -338,4 +344,4 @@ alphabetPosition = (string) => {
     return resultString
 }
 
-alphabetPosition("The sunset sets at twelve o' clock.")
+// console.log(alphabetPosition("The sunset sets at twelve o' clock."))

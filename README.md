@@ -3,4 +3,4 @@
 
 This repo is an in progress project of simple and complex coding callenges.  
 
-To see the results, uncomment the function calls and run a node app.js
+Live site is deployed here:  https://erics-coding-challenges.netlify.com/

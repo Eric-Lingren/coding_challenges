@@ -37,6 +37,7 @@ pre[class*="language-"] {
 	margin: .5em 0;
 	overflow: auto;
 	border-radius: 0.3em;
+	
 }
 
 :not(pre) > code[class*="language-"],
@@ -49,6 +50,7 @@ pre[class*="language-"] {
 	padding: .1em;
 	border-radius: .3em;
 	white-space: normal;
+	
 }
 
 .token.comment,
@@ -125,3 +127,9 @@ pre[class*="language-"] {
 	cursor: help;
 }
 
+@media only screen and (max-width: 500px) {
+	:not(pre) > code[class*="language-"],
+	pre[class*="language-"] {
+		width: 80%;
+	}
+}
